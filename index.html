@@ -13,15 +13,18 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
-        overflow: hidden;
+        flex-direction: column;
+        min-height: 100vh;
         position: relative;
+        overflow-x: hidden;
     }
 
     .container {
         text-align: center;
         color: #fff;
         text-shadow: 2px 2px 5px #b24f6f;
+        position: relative;
+        z-index: 1;
     }
 
     h1 {
@@ -67,9 +70,10 @@
     }
 
     /* Ad containers */
-    .ad-center {
+    .ad-top, .ad-center {
         text-align: center;
-        margin-top: 20px;
+        margin: 10px 0;
+        z-index: 2;
     }
 
     .ad-fixed {
@@ -81,6 +85,11 @@
 </style>
 </head>
 <body>
+
+<!-- Third Ad: Game ke upar center -->
+<div class="ad-top">
+<script type="text/javascript" src="//pl28206371.effectivegatecpm.com/9d/a4/44/9da44468e429434cfc83dd1296965b39.js"></script>
+</div>
 
 <div class="container">
     <h1>I ❤️ You</h1>
