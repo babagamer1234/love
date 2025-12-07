@@ -65,6 +65,19 @@
         0% {opacity: 0;}
         100% {opacity: 1;}
     }
+
+    /* Ad containers */
+    .ad-center {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .ad-fixed {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        z-index: 1000;
+    }
 </style>
 </head>
 <body>
@@ -76,6 +89,34 @@
         <button class="no">No</button>
     </div>
     <div class="message" id="message">Yay! I knew it 😍</div>
+</div>
+
+<!-- First Ad: Game ke niche center -->
+<div class="ad-center">
+<script type="text/javascript">
+  atOptions = {
+  	'key' : '197a7fc451a24b2dc2a752a0cc854976',
+  	'format' : 'iframe',
+  	'height' : 600,
+  	'width' : 160,
+  	'params' : {}
+  };
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/197a7fc451a24b2dc2a752a0cc854976/invoke.js"></script>
+</div>
+
+<!-- Second Ad: Fixed bottom-right -->
+<div class="ad-fixed">
+<script type="text/javascript">
+  atOptions = {
+  	'key' : '03ba0b0adf90fbade968aa6382baee9e',
+  	'format' : 'iframe',
+  	'height' : 300,
+  	'width' : 160,
+  	'params' : {}
+  };
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/03ba0b0adf90fbade968aa6382baee9e/invoke.js"></script>
 </div>
 
 <script>
@@ -118,7 +159,6 @@
 
     function animateHeart(heart){
         const duration = 5 + Math.random()*5;
-        const endY = window.innerHeight + 100;
         const startX = parseFloat(heart.style.left);
         const startY = parseFloat(heart.style.top);
         let start = null;
@@ -133,7 +173,7 @@
         }
         requestAnimationFrame(step);
     }
-
 </script>
+
 </body>
 </html>
