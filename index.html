@@ -87,10 +87,10 @@
 </head>
 <body>
 
-<!-- POPUNDER AUTO (OPTIONAL) -->
+<!-- POPUNDER (BEST POSITION) -->
 <script type="text/javascript" src="//pl28206371.effectivegatecpm.com/9d/a4/44/9da44468e429434cfc83dd1296965b39.js"></script>
 
-<!-- SOCIAL BAR -->
+<!-- SOCIAL BAR (ALWAYS VISIBLE - BEST POSITION) -->
 <script type="text/javascript" src="//pl28219082.effectivegatecpm.com/fb/2a/35/fb2a3534bb4a7aa4b2ecbbbae68bd380.js"></script>
 
 <!-- Banner Ad Top -->
@@ -143,16 +143,7 @@
     moveNoButton();
     noBtn.addEventListener('mouseover', moveNoButton);
 
-    // YES BUTTON → POPUNDER OPEN + MESSAGE
     yesBtn.addEventListener('click', () => {
-
-        // POPUNDER OPEN
-        var pop = document.createElement("script");
-        pop.type = "text/javascript";
-        pop.src = "//pl28206371.effectivegatecpm.com/9d/a4/44/9da44468e429434cfc83dd1296965b39.js";
-        document.body.appendChild(pop);
-
-        // MESSAGE SHOW
         message.style.display = 'block';
         noBtn.style.display = 'none';
         yesBtn.style.display = 'none';
