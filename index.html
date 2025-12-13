@@ -4,9 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- ✅ SITE VERIFICATION ADDED -->
-<meta name="6a97888e-site-verification" content="3207b858190d3fc5aed5f2433c5aeba6">
-
 <title>Do You Love Me?</title>
 
 <style>
@@ -74,28 +71,27 @@
         100% {opacity: 1;}
     }
 
-    .ad-top, .ad-center {
+    .ad-top, .ad-center, .ad-bottom {
         text-align: center;
         margin: 10px 0;
         z-index: 2;
     }
 
-    .ad-fixed {
+    .ad-bottom {
         position: fixed;
-        bottom: 10px;
-        right: 10px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
         z-index: 1000;
     }
 </style>
-
 </head>
 <body>
 
-<!-- ✅ 2nd AD (PEMSRV) -->
-<div class="ad-top">
-<script async type="application/javascript" src="https://a.pemsrv.com/ad-provider.js"></script> 
-<ins class="eas6a97888e35" data-zoneid="5799008"></ins> 
-<script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
+<!-- ✅ Top Ad - PropellerAds -->
+<div class="ad-top" id="ad-top">
+<script async type="text/javascript" src="https://static.propellerads.com/ads.js"></script>
+<ins class="propeller-ad" data-adzone="YOUR_PROPELLER_ADZONE_ID"></ins>
 </div>
 
 <div class="container">
@@ -107,18 +103,17 @@
     <div class="message" id="message">Yay! I knew it 😍</div>
 </div>
 
-<!-- ✅ 3rd AD (MAGSRV) -->
-<div class="ad-center">
-<script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> 
-<ins class="eas6a97888e6" data-zoneid="5799010"></ins> 
-<script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
+<!-- ✅ Center Ad - Adsterra -->
+<div class="ad-center" id="ad-center">
+<script async type="text/javascript" src="https://ad.adsterra.com/adserve.js"></script>
+<ins class="adsterra-zone" data-zoneid="YOUR_ADSTERRA_ZONE_ID"></ins>
 </div>
 
-<!-- ✅ 1st AD (ExoClick) -->
-<div class="ad-center">
-<script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
-<ins class="eas6a97888e2" data-zoneid="5799004"></ins>
-<script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
+<!-- ✅ Bottom / Sticky Ad - ExoClick -->
+<div class="ad-bottom" id="ad-bottom">
+<script async type="application/javascript" src="https://a.exoclick.com/ad-provider.js"></script>
+<ins class="exoclick-ad" data-zoneid="YOUR_EXOCLICK_ZONE_ID"></ins>
+<script>(window.AdProvider = window.AdProvider || []).push({"serve": {}});</script>
 </div>
 
 <script>
