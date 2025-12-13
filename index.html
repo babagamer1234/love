@@ -6,9 +6,7 @@
 <title>Love % Calculator</title>
 
 <style>
-  :root{--bg:#0f1724;--card:#0b1220;--accent:#ff6b81;--muted:#9aa7bf}
-  *{box-sizing:border-box}
-  body{margin:0;min-height:100vh;background:linear-gradient(180deg,#071427,#071a2b);color:#e6eef8;font-family:Inter, system-ui, Arial}
+  body{margin:0;min-height:100vh;background:linear-gradient(180deg,#071427,#071a2b);color:#e6eef8;font-family:Arial,sans-serif;display:flex;justify-content:center;align-items:center;flex-direction:column;}
   .wrap{max-width:760px;margin:44px auto;padding:20px}
   .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:22px;border-radius:14px;box-shadow:0 10px 30px rgba(2,6,23,0.7)}
   h1{margin:0 0 8px;font-size:22px}
@@ -16,12 +14,12 @@
   .row{display:flex;gap:12px;margin-bottom:12px}
   input[type=text]{flex:1;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.08);background:transparent;color:#fff}
   button{background:#ff6b81;border:0;color:#fff;padding:10px 14px;border-radius:10px;cursor:pointer}
-  .controls{display:flex;gap:8px;margin-top:10px}
+  .controls{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
   .result{margin-top:16px;padding:14px;border-radius:12px;background:linear-gradient(90deg,rgba(255,107,129,0.08),transparent);display:flex;align-items:center;gap:14px}
-  .meter{width:96px;height:96px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.05);font-weight:700}
+  .meter{width:96px;height:96px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.05);font-weight:700;font-size:1.2em}
   footer{text-align:center;margin-top:14px;color:#9aa7bf;font-size:13px}
-  .ad-top, .ad-center, .ad-bottom{ text-align:center; margin:12px 0; }
-  .ad-bottom{ position:fixed; bottom:0; left:50%; transform:translateX(-50%); z-index:1000; }
+  .ad-top,.ad-center,.ad-bottom{text-align:center;margin:12px 0;}
+  .ad-bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);z-index:1000;}
   @media(max-width:600px){.row{flex-direction:column}}
 </style>
 </head>
@@ -57,30 +55,8 @@
   <footer>Made for fun ❤️</footer>
 </div>
 
-<script>
-function normalize(s){return (s||'').toLowerCase().replace(/[^a-z0-9]/g,'')}
-function score(s){let n=0;s=normalize(s);for(let i=0;i<s.length;i++)n+=s.charCodeAt(i)*(i+1);return n}
-function love(a,b){return Math.abs((score(a)*31+score(b)*37)%101)}
-
-const A=document.getElementById('nameA'),B=document.getElementById('nameB');
-const meter=document.getElementById('meter'),headline=document.getElementById('headline');
-document.getElementById('calcBtn').onclick=()=>{
-    if(!A.value&&!B.value)return alert("Enter name");
-    let p=love(A.value,B.value);
-    meter.innerText=p+"%";
-    headline.innerText=`${A.value||'-'} ❤ ${B.value||'-'} = ${p}%`;
-};
-document.getElementById('randomBtn').onclick=()=>{
-    let n=["Rahul","Priya","Aman","Neha","Rohit","Sana"];
-    A.value=n[Math.random()*n.length|0];
-    B.value=n[Math.random()*n.length|0];
-    document.getElementById('calcBtn').onclick();
-};
-document.getElementById('clearBtn').onclick=()=>{A.value='';B.value='';meter.innerText='0%';}
-document.getElementById('shareBtn').onclick=()=>{navigator.clipboard.writeText(headline.innerText);}
-</script>
-
-<!-- ✅ 1st Ad -->
+<!-- ✅ Adsterra Ads Integration -->
+<!-- 1st Ad -->
 <div class="ad-top">
 <script type="text/javascript"> 
   atOptions = {
@@ -94,12 +70,12 @@ document.getElementById('shareBtn').onclick=()=>{navigator.clipboard.writeText(h
 <script type="text/javascript" src="https://www.highperformanceformat.com/27b813cdc6d5794fb868827fefffa076/invoke.js"></script>
 </div>
 
-<!-- ✅ 2nd Ad -->
+<!-- 2nd Ad -->
 <div class="ad-center">
 <iframe src="https://www.effectivegatecpm.com/y1prb7n6?key=4b6b7f0fff246d70af7a20f1f769c394" width="728" height="90" frameborder="0" scrolling="no"></iframe>
 </div>
 
-<!-- ✅ 3rd Ad -->
+<!-- 3rd Ad -->
 <div class="ad-top">
 <script type="text/javascript">
   atOptions = {
@@ -113,15 +89,66 @@ document.getElementById('shareBtn').onclick=()=>{navigator.clipboard.writeText(h
 <script type="text/javascript" src="https://www.highperformanceformat.com/76cc195cb885e8aac38d6b1d9d0d1d3c/invoke.js"></script>
 </div>
 
-<!-- ✅ 4th Ad -->
+<!-- 4th Ad -->
 <div class="ad-center">
 <script type="text/javascript" src="https://pl28248247.effectivegatecpm.com/bb/3c/50/bb3c50d627b34f7b44e330a7ab8bb5ee.js"></script>
 </div>
 
-<!-- ✅ 5th Ad -->
+<!-- 5th Ad -->
 <div class="ad-bottom" id="container-726f8a59b08f1195dd2914f980fca6f7">
 <script async="async" data-cfasync="false" src="https://pl28248250.effectivegatecpm.com/726f8a59b08f1195dd2914f980fca6f7/invoke.js"></script>
 </div>
+
+<script>
+// Function to calculate love percentage
+function normalize(s){return (s||'').toLowerCase().trim();}
+
+// Custom name pairs with fixed percentage
+const customPairs = {
+  'daksh+tammana': 100,
+  'rahul+priya': 90,
+  'aman+neha': 85
+};
+
+function love(a,b){
+    const key1 = normalize(a)+'+'+normalize(b);
+    const key2 = normalize(b)+'+'+normalize(a);
+
+    if(customPairs[key1] !== undefined) return customPairs[key1];
+    if(customPairs[key2] !== undefined) return customPairs[key2];
+
+    // Default calculation
+    let n=0;
+    for(let i=0;i<a.length;i++) n+=a.charCodeAt(i)*(i+1);
+    for(let i=0;i<b.length;i++) n+=b.charCodeAt(i)*(i+1);
+    return Math.abs((n*31 + n*37) % 101);
+}
+
+const A=document.getElementById('nameA'), B=document.getElementById('nameB');
+const meter=document.getElementById('meter'), headline=document.getElementById('headline');
+
+document.getElementById('calcBtn').onclick=()=>{
+    if(!A.value&&!B.value) return alert("Enter name");
+    const p=love(A.value,B.value);
+    meter.innerText=p+"%";
+    headline.innerText=`${A.value||'-'} ❤ ${B.value||'-'} = ${p}%`;
+};
+
+document.getElementById('randomBtn').onclick=()=>{
+    const n=["Rahul","Priya","Aman","Neha","Rohit","Sana"];
+    A.value=n[Math.random()*n.length|0];
+    B.value=n[Math.random()*n.length|0];
+    document.getElementById('calcBtn').onclick();
+};
+
+document.getElementById('clearBtn').onclick=()=>{
+    A.value=''; B.value=''; meter.innerText='0%';
+};
+
+document.getElementById('shareBtn').onclick=()=>{
+    navigator.clipboard.writeText(headline.innerText);
+};
+</script>
 
 </body>
 </html>
