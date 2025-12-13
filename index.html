@@ -3,95 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Do You Love Me?</title>
 
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Arial', sans-serif;
-        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        min-height: 100vh;
-        position: relative;
-        overflow-x: hidden;
-    }
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
 
-    .container {
-        text-align: center;
-        color: #fff;
-        text-shadow: 2px 2px 5px #b24f6f;
-        position: relative;
-        z-index: 1;
-    }
+.container {
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 5px #b24f6f;
+    position: relative;
+    z-index: 1;
+}
 
-    h1 {
-        font-size: 4em;
-        margin-bottom: 20px;
-    }
+h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+}
 
-    .buttons {
-        margin-top: 30px;
-    }
+.buttons {
+    margin-top: 30px;
+}
 
-    button {
-        font-size: 1.5em;
-        padding: 10px 30px;
-        margin: 10px;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
+button {
+    font-size: 1.5em;
+    padding: 10px 30px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 
-    button.yes {
-        background-color: #ff4757;
-        color: #fff;
-    }
+button.yes { background-color: #ff4757; color: #fff; }
+button.no { background-color: #2f3542; color: #fff; position: absolute; }
 
-    button.no {
-        background-color: #2f3542;
-        color: #fff;
-        position: absolute;
-    }
+.message {
+    margin-top: 40px;
+    font-size: 2em;
+    display: none;
+    animation: fadeIn 1s forwards;
+}
 
-    .message {
-        margin-top: 40px;
-        font-size: 2em;
-        display: none;
-        animation: fadeIn 1s forwards;
-    }
+@keyframes fadeIn { 0% {opacity: 0;} 100% {opacity: 1;} }
 
-    @keyframes fadeIn {
-        0% {opacity: 0;}
-        100% {opacity: 1;}
-    }
-
-    .ad-top, .ad-center, .ad-bottom {
-        text-align: center;
-        margin: 10px 0;
-        z-index: 2;
-    }
-
-    .ad-bottom {
-        position: fixed;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1000;
-    }
+.ad-top, .ad-center, .ad-bottom { text-align: center; margin: 10px 0; z-index: 2; }
+.ad-bottom { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); z-index: 1000; }
 </style>
 </head>
 <body>
 
-<!-- ✅ Top Ad - PropellerAds -->
-<div class="ad-top" id="ad-top">
-<script async type="text/javascript" src="https://static.propellerads.com/ads.js"></script>
-<ins class="propeller-ad" data-adzone="YOUR_PROPELLER_ADZONE_ID"></ins>
+<!-- ✅ Top Ad - Adsterra 728x90 -->
+<div class="ad-top">
+<script type="text/javascript">
+  atOptions = {
+  	'key' : '27b813cdc6d5794fb868827fefffa076',
+  	'format' : 'iframe',
+  	'height' : 90,
+  	'width' : 728,
+  	'params' : {}
+  };
+</script>
+<script type="text/javascript" src="https://www.highperformanceformat.com/27b813cdc6d5794fb868827fefffa076/invoke.js"></script>
 </div>
 
 <div class="container">
@@ -103,39 +88,40 @@
     <div class="message" id="message">Yay! I knew it 😍</div>
 </div>
 
-<!-- ✅ Center Ad - Adsterra -->
-<div class="ad-center" id="ad-center">
-<script async type="text/javascript" src="https://ad.adsterra.com/adserve.js"></script>
-<ins class="adsterra-zone" data-zoneid="YOUR_ADSTERRA_ZONE_ID"></ins>
+<!-- ✅ Center Ad - ExoClick MAGSRV -->
+<div class="ad-center">
+<script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> 
+<ins class="eas6a97888e2" data-zoneid="5799004"></ins> 
+<script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
 </div>
 
-<!-- ✅ Bottom / Sticky Ad - ExoClick -->
-<div class="ad-bottom" id="ad-bottom">
-<script async type="application/javascript" src="https://a.exoclick.com/ad-provider.js"></script>
-<ins class="exoclick-ad" data-zoneid="YOUR_EXOCLICK_ZONE_ID"></ins>
-<script>(window.AdProvider = window.AdProvider || []).push({"serve": {}});</script>
+<!-- ✅ Bottom / Sticky Ad - ExoClick Alternate Zone -->
+<div class="ad-bottom">
+<script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> 
+<ins class="eas6a97888e3" data-zoneid="5799010"></ins> 
+<script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
 </div>
 
 <script>
-    const noBtn = document.querySelector('.no');
-    const yesBtn = document.querySelector('.yes');
-    const message = document.getElementById('message');
+const noBtn = document.querySelector('.no');
+const yesBtn = document.querySelector('.yes');
+const message = document.getElementById('message');
 
-    moveNoButton();
-    noBtn.addEventListener('mouseover', moveNoButton);
+moveNoButton();
+noBtn.addEventListener('mouseover', moveNoButton);
 
-    yesBtn.addEventListener('click', () => {
-        message.style.display = 'block';
-        noBtn.style.display = 'none';
-        yesBtn.style.display = 'none';
-    });
+yesBtn.addEventListener('click', () => {
+    message.style.display = 'block';
+    noBtn.style.display = 'none';
+    yesBtn.style.display = 'none';
+});
 
-    function moveNoButton() {
-        const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
-        const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
-        noBtn.style.left = x + 'px';
-        noBtn.style.top = y + 'px';
-    }
+function moveNoButton() {
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+    noBtn.style.left = x + 'px';
+    noBtn.style.top = y + 'px';
+}
 </script>
 
 </body>
