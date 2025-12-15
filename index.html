@@ -1,3 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- ✅ HilltopAds Verification -->
+<meta name="1377d7dc8fb5b5f165dc24838a3f01164d74081d"
+      content="1377d7dc8fb5b5f165dc24838a3f01164d74081d" />
+
+<!-- ✅ Referrer Policy -->
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+<title>Love % Calculator</title>
+
+<style>
+body{
+  margin:0;
+  min-height:100vh;
+  background:linear-gradient(180deg,#071427,#071a2b);
+  color:#e6eef8;
+  font-family:Arial,sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
+.wrap{max-width:760px;margin:44px auto;padding:20px}
+.card{
+  background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));
+  padding:22px;
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(2,6,23,0.7)
+}
+h1{margin:0 0 8px;font-size:22px}
+p.lead{margin:0 0 16px;color:#9aa7bf}
+.row{display:flex;gap:12px;margin-bottom:12px}
+input[type=text]{
+  flex:1;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.08);
+  background:transparent;
+  color:#fff
+}
+button{
+  background:#ff6b81;
+  border:0;
+  color:#fff;
+  padding:10px 14px;
+  border-radius:10px;
+  cursor:pointer
+}
+.controls{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.result{
+  margin-top:16px;
+  padding:14px;
+  border-radius:12px;
+  background:linear-gradient(90deg,rgba(255,107,129,0.08),transparent);
+  display:flex;
+  align-items:center;
+  gap:14px
+}
+.meter{
+  width:96px;
+  height:96px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(255,255,255,0.05);
+  font-weight:700;
+  font-size:1.2em
+}
+footer{text-align:center;margin-top:14px;color:#9aa7bf;font-size:13px}
+@media(max-width:600px){.row{flex-direction:column}}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+  <div class="card">
+    <h1>Love % Calculator 💖</h1>
+    <p class="lead">Type two names and see the love compatibility percentage.</p>
+
+    <div class="row">
+      <input id="nameA" type="text" placeholder="Your name">
+      <input id="nameB" type="text" placeholder="Partner name">
+    </div>
+
+    <div class="controls">
+      <button id="calcBtn">Calculate</button>
+      <button id="randomBtn">Random</button>
+      <button id="clearBtn">Clear</button>
+      <div style="flex:1"></div>
+      <button id="shareBtn">Copy</button>
+    </div>
+
+    <div class="result">
+      <div class="meter" id="meter">0%</div>
+      <div>
+        <div id="headline"><b>No result yet</b></div>
+        <div style="font-size:13px;color:#9aa7bf">Enter names</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>Made for fun ❤️</footer>
+</div>
+
 <!-- ✅ HilltopAds POP (ONLY ONE – SAFE) -->
 <script>
 (function(meucchk){
@@ -53,3 +164,52 @@
   l.parentNode.insertBefore(s, l);
 })({});
 </script>
+
+<script>
+function normalize(s){return (s||'').toLowerCase().trim();}
+
+const customPairs={
+  "daksh+tammana":100,
+  "rahul+priya":90,
+  "aman+neha":85
+};
+
+function love(a,b){
+  const k1=normalize(a)+"+"+normalize(b);
+  const k2=normalize(b)+"+"+normalize(a);
+  if(customPairs[k1]!=undefined) return customPairs[k1];
+  if(customPairs[k2]!=undefined) return customPairs[k2];
+
+  let n=0;
+  for(let i=0;i<a.length;i++) n+=a.charCodeAt(i)*(i+1);
+  for(let i=0;i<b.length;i++) n+=b.charCodeAt(i)*(i+1);
+  return Math.abs((n*31+n*37)%101);
+}
+
+calcBtn.onclick=()=>{
+  if(!nameA.value&&!nameB.value) return alert("Enter name");
+  const p=love(nameA.value,nameB.value);
+  meter.innerText=p+"%";
+  headline.innerText=`${nameA.value||'-'} ❤ ${nameB.value||'-'} = ${p}%`;
+};
+
+randomBtn.onclick=()=>{
+  const n=["Rahul","Priya","Aman","Neha","Rohit","Sana"];
+  nameA.value=n[Math.random()*n.length|0];
+  nameB.value=n[Math.random()*n.length|0];
+  calcBtn.onclick();
+};
+
+clearBtn.onclick=()=>{
+  nameA.value='';
+  nameB.value='';
+  meter.innerText='0%';
+};
+
+shareBtn.onclick=()=>{
+  navigator.clipboard.writeText(headline.innerText);
+};
+</script>
+
+</body>
+</html>
