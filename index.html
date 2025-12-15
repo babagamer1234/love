@@ -4,13 +4,6 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<!-- ✅ HilltopAds Verification -->
-<meta name="1377d7dc8fb5b5f165dc24838a3f01164d74081d"
-      content="1377d7dc8fb5b5f165dc24838a3f01164d74081d" />
-
-<!-- ✅ Referrer Policy -->
-<meta name="referrer" content="no-referrer-when-downgrade" />
-
 <title>Love % Calculator</title>
 
 <style>
@@ -24,8 +17,9 @@ body{
   justify-content:center;
   align-items:center;
   flex-direction:column;
+  position:relative;
 }
-.wrap{max-width:760px;margin:44px auto;padding:20px}
+.wrap{max-width:760px;margin:44px auto;padding:20px;position:relative;z-index:1}
 .card{
   background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));
   padding:22px;
@@ -74,6 +68,19 @@ button{
 }
 footer{text-align:center;margin-top:14px;color:#9aa7bf;font-size:13px}
 @media(max-width:600px){.row{flex-direction:column}}
+
+/* Ads positioning */
+#ad1, #ad2, #ad3{
+  position:fixed;
+  z-index:9999;
+  width:160px;
+  height:90px;
+  background:#00000010; /* fallback bg if ad fails */
+}
+
+#ad1{top:10px; left:10px;}
+#ad2{top:10px; right:10px;}
+#ad3{bottom:10px; right:10px;}
 </style>
 </head>
 
@@ -109,60 +116,46 @@ footer{text-align:center;margin-top:14px;color:#9aa7bf;font-size:13px}
   <footer>Made for fun ❤️</footer>
 </div>
 
-<!-- ✅ HilltopAds POP (ONLY ONE – SAFE) -->
-<script>
-(function(meucchk){
-  var d=document,
-      s=d.createElement('script'),
-      l=d.scripts[d.scripts.length-1];
-  s.settings=meucchk||{};
-  s.src="//droopycabinet.com/ccDh9H6/b.2O5/l/S-W/QZ9/NfjkcTyJN/z/Ug0qMkCx0N2PNcz/IK3/NOT/QvxB";
-  s.async=true;
-  s.referrerPolicy='no-referrer-when-downgrade';
-  l.parentNode.insertBefore(s,l);
-})({});
-</script>
-
-<!-- 1st Ad -->
+<!-- 1st Ad Top-Left -->
+<div id="ad1"></div>
 <script>
 (function(thnknm){
   var d=document,
-      s=d.createElement('script'),
-      l=d.scripts[d.scripts.length-1];
+      s=d.createElement('script');
   s.settings = thnknm || {};
   s.src = "//defenselessweight.com/bbXWV/spd.G/lR0rYDWNcH/deDm/9nu/ZSUtlJk_PATAYL3mMBjCco1yNwTkIZt/NRj/c/y/NbzwUM1PMBw-";
   s.async = true;
   s.referrerPolicy = 'no-referrer-when-downgrade';
-  l.parentNode.insertBefore(s, l);
-})({});
+  d.getElementById('ad1').appendChild(s);
+})();
 </script>
 
-<!-- 2nd Ad -->
+<!-- 2nd Ad Top-Right -->
+<div id="ad2"></div>
 <script>
 (function(mvx){
   var d=document,
-      s=d.createElement('script'),
-      l=d.scripts[d.scripts.length-1];
+      s=d.createElement('script');
   s.settings = mvx || {};
   s.src = "//defenselessweight.com/bmXPVMstd.GFld0_YYWccq/Ve/mI9/uxZ/UJlQkvPxTtYG3/MxjAcc1/NcDwgZtyNyjScKyYNBzqUE0nOUQZ";
   s.async = true;
   s.referrerPolicy = 'no-referrer-when-downgrade';
-  l.parentNode.insertBefore(s, l);
-})({});
+  d.getElementById('ad2').appendChild(s);
+})();
 </script>
 
-<!-- 3rd Ad -->
+<!-- 3rd Ad Bottom-Right -->
+<div id="ad3"></div>
 <script>
 (function(dsay){
   var d=document,
-      s=d.createElement('script'),
-      l=d.scripts[d.scripts.length-1];
+      s=d.createElement('script');
   s.settings = dsay || {};
   s.src = "//droopycabinet.com/cCD.9s6MbS2i5DlTS_WqQd9XNIjiccyDN/zwUu0pMXCl0/2/NSzXIm3HNVTYQPxW";
   s.async = true;
   s.referrerPolicy = 'no-referrer-when-downgrade';
-  l.parentNode.insertBefore(s, l);
-})({});
+  d.getElementById('ad3').appendChild(s);
+})();
 </script>
 
 <script>
