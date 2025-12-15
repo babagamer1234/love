@@ -1,25 +1,74 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- ✅ HilltopAds Verification -->
+<meta name="1377d7dc8fb5b5f165dc24838a3f01164d74081d" content="1377d7dc8fb5b5f165dc24838a3f01164d74081d" />
+
 <title>Love % Calculator</title>
 
 <style>
-  body{margin:0;min-height:100vh;background:linear-gradient(180deg,#071427,#071a2b);color:#e6eef8;font-family:Arial,sans-serif;display:flex;justify-content:center;align-items:center;flex-direction:column;}
+  body{
+    margin:0;
+    min-height:100vh;
+    background:linear-gradient(180deg,#071427,#071a2b);
+    color:#e6eef8;
+    font-family:Arial,sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+  }
   .wrap{max-width:760px;margin:44px auto;padding:20px}
-  .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:22px;border-radius:14px;box-shadow:0 10px 30px rgba(2,6,23,0.7)}
+  .card{
+    background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));
+    padding:22px;
+    border-radius:14px;
+    box-shadow:0 10px 30px rgba(2,6,23,0.7)
+  }
   h1{margin:0 0 8px;font-size:22px}
   p.lead{margin:0 0 16px;color:#9aa7bf}
   .row{display:flex;gap:12px;margin-bottom:12px}
-  input[type=text]{flex:1;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.08);background:transparent;color:#fff}
-  button{background:#ff6b81;border:0;color:#fff;padding:10px 14px;border-radius:10px;cursor:pointer}
+  input[type=text]{
+    flex:1;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.08);
+    background:transparent;
+    color:#fff
+  }
+  button{
+    background:#ff6b81;
+    border:0;
+    color:#fff;
+    padding:10px 14px;
+    border-radius:10px;
+    cursor:pointer
+  }
   .controls{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
-  .result{margin-top:16px;padding:14px;border-radius:12px;background:linear-gradient(90deg,rgba(255,107,129,0.08),transparent);display:flex;align-items:center;gap:14px}
-  .meter{width:96px;height:96px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.05);font-weight:700;font-size:1.2em}
+  .result{
+    margin-top:16px;
+    padding:14px;
+    border-radius:12px;
+    background:linear-gradient(90deg,rgba(255,107,129,0.08),transparent);
+    display:flex;
+    align-items:center;
+    gap:14px
+  }
+  .meter{
+    width:96px;
+    height:96px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(255,255,255,0.05);
+    font-weight:700;
+    font-size:1.2em
+  }
   footer{text-align:center;margin-top:14px;color:#9aa7bf;font-size:13px}
-  .ad-top,.ad-center,.ad-bottom{text-align:center;margin:12px 0;}
-  .ad-bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);z-index:1000;}
   @media(max-width:600px){.row{flex-direction:column}}
 </style>
 </head>
@@ -47,7 +96,7 @@
       <div class="meter" id="meter">0%</div>
       <div>
         <div id="headline"><b>No result yet</b></div>
-        <div id="sub" style="font-size:13px;color:#9aa7bf">Enter names</div>
+        <div style="font-size:13px;color:#9aa7bf">Enter names</div>
       </div>
     </div>
   </div>
@@ -55,98 +104,49 @@
   <footer>Made for fun ❤️</footer>
 </div>
 
-<!-- ✅ Adsterra Ads Integration -->
-<!-- 1st Ad -->
-<div class="ad-top">
-<script type="text/javascript"> 
-  atOptions = {
-    'key' : '27b813cdc6d5794fb868827fefffa076',
-    'format' : 'iframe',
-    'height' : 90,
-    'width' : 728,
-    'params' : {}
-  };
-</script>
-<script type="text/javascript" src="https://www.highperformanceformat.com/27b813cdc6d5794fb868827fefffa076/invoke.js"></script>
-</div>
-
-<!-- 2nd Ad -->
-<div class="ad-center">
-<iframe src="https://www.effectivegatecpm.com/y1prb7n6?key=4b6b7f0fff246d70af7a20f1f769c394" width="728" height="90" frameborder="0" scrolling="no"></iframe>
-</div>
-
-<!-- 3rd Ad -->
-<div class="ad-top">
-<script type="text/javascript">
-  atOptions = {
-    'key' : '76cc195cb885e8aac38d6b1d9d0d1d3c',
-    'format' : 'iframe',
-    'height' : 60,
-    'width' : 468,
-    'params' : {}
-  };
-</script>
-<script type="text/javascript" src="https://www.highperformanceformat.com/76cc195cb885e8aac38d6b1d9d0d1d3c/invoke.js"></script>
-</div>
-
-<!-- 4th Ad -->
-<div class="ad-center">
-<script type="text/javascript" src="https://pl28248247.effectivegatecpm.com/bb/3c/50/bb3c50d627b34f7b44e330a7ab8bb5ee.js"></script>
-</div>
-
-<!-- 5th Ad -->
-<div class="ad-bottom" id="container-726f8a59b08f1195dd2914f980fca6f7">
-<script async="async" data-cfasync="false" src="https://pl28248250.effectivegatecpm.com/726f8a59b08f1195dd2914f980fca6f7/invoke.js"></script>
-</div>
-
 <script>
-// Function to calculate love percentage
 function normalize(s){return (s||'').toLowerCase().trim();}
 
-// Custom name pairs with fixed percentage
-const customPairs = {
-  'daksh+tammana': 100,
-  'rahul+priya': 90,
-  'aman+neha': 85
+const customPairs={
+  'daksh+tammana':100,
+  'rahul+priya':90,
+  'aman+neha':85
 };
 
 function love(a,b){
-    const key1 = normalize(a)+'+'+normalize(b);
-    const key2 = normalize(b)+'+'+normalize(a);
+  const k1=normalize(a)+'+'+normalize(b);
+  const k2=normalize(b)+'+'+normalize(a);
+  if(customPairs[k1]!=undefined) return customPairs[k1];
+  if(customPairs[k2]!=undefined) return customPairs[k2];
 
-    if(customPairs[key1] !== undefined) return customPairs[key1];
-    if(customPairs[key2] !== undefined) return customPairs[key2];
-
-    // Default calculation
-    let n=0;
-    for(let i=0;i<a.length;i++) n+=a.charCodeAt(i)*(i+1);
-    for(let i=0;i<b.length;i++) n+=b.charCodeAt(i)*(i+1);
-    return Math.abs((n*31 + n*37) % 101);
+  let n=0;
+  for(let i=0;i<a.length;i++) n+=a.charCodeAt(i)*(i+1);
+  for(let i=0;i<b.length;i++) n+=b.charCodeAt(i)*(i+1);
+  return Math.abs((n*31+n*37)%101);
 }
 
-const A=document.getElementById('nameA'), B=document.getElementById('nameB');
-const meter=document.getElementById('meter'), headline=document.getElementById('headline');
+const A=nameA,B=nameB,meter=document.getElementById('meter'),headline=document.getElementById('headline');
 
-document.getElementById('calcBtn').onclick=()=>{
-    if(!A.value&&!B.value) return alert("Enter name");
-    const p=love(A.value,B.value);
-    meter.innerText=p+"%";
-    headline.innerText=`${A.value||'-'} ❤ ${B.value||'-'} = ${p}%`;
+calcBtn.onclick=()=>{
+  if(!A.value&&!B.value) return alert("Enter name");
+  const p=love(A.value,B.value);
+  meter.innerText=p+"%";
+  headline.innerText=`${A.value||'-'} ❤ ${B.value||'-'} = ${p}%`;
 };
 
-document.getElementById('randomBtn').onclick=()=>{
-    const n=["Rahul","Priya","Aman","Neha","Rohit","Sana"];
-    A.value=n[Math.random()*n.length|0];
-    B.value=n[Math.random()*n.length|0];
-    document.getElementById('calcBtn').onclick();
+randomBtn.onclick=()=>{
+  const n=["Rahul","Priya","Aman","Neha","Rohit","Sana"];
+  A.value=n[Math.random()*n.length|0];
+  B.value=n[Math.random()*n.length|0];
+  calcBtn.onclick();
 };
 
-document.getElementById('clearBtn').onclick=()=>{
-    A.value=''; B.value=''; meter.innerText='0%';
+clearBtn.onclick=()=>{
+  A.value='';B.value='';meter.innerText='0%';
 };
 
-document.getElementById('shareBtn').onclick=()=>{
-    navigator.clipboard.writeText(headline.innerText);
+shareBtn.onclick=()=>{
+  navigator.clipboard.writeText(headline.innerText);
 };
 </script>
 
